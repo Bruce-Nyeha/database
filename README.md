@@ -1,33 +1,54 @@
-# My Database Learning Journey (ITM111)
-This repo is about what I learned in ITM111 - Introduction to Databases at BYU-Pathway.
+# University Database Project (ITM111)
 
-I started with almost no SQL knowledge. Now I can build full databases, fix errors, write good queries, and understand how data works behind apps.
+This repository contains my work from the ITM111 Introduction to Databases course.
 
-### What I learned
-- I built a complete university database with 7 tables: students, courses, sections, enrollment, faculty, departments, and colleges.
-- I learned how to connect tables with JOINs (INNER, LEFT, RIGHT) and how to use bridge tables for many-to-many relationships.
-- I learned normal forms (1NF, 2NF, 3NF) and why 3NF is usually enough for real projects.
-- I wrote many queries: SELECT with WHERE, GROUP BY + HAVING, SUM, COUNT, AVG, DATE_FORMAT, DATEDIFF, and more.
-- I fixed a lot of errors like 1054 (unknown column), 1451 (foreign key), 1175 (safe mode), and duplicate data problems.
-- I learned the correct order of INSERTs: first parents (college → department → course → faculty → section), then children (student → enrollment).
-- I learned how to make clean ER diagrams in MySQL Workbench and how to read crow's foot notation.
+### What I learned during the course
 
-### My biggest win
-I had many problems with errors and wrong results. I lost points on the final exam first time. But I asked for another chance, fixed my database schema, and got 100% on the retake. That felt really good.
+- Designed and built a full university database with 7 tables:
+  - college
+  - departments
+  - course
+  - faculty
+  - section
+  - students
+  - enrollment (linking table for many-to-many)
 
-### Why this is important for backend jobs
-SQL is very important for backend developers. When you know SQL well, you can:
-- Work fast with data
-- Write good API endpoints
-- Fix bugs quickly
-- Understand the full system (frontend → backend → database)
+- Understood relationships:
+  - One-to-many (college to departments, department to course, etc.)
+  - Many-to-many (students to sections via enrollment table)
 
-### Next step
-Now I want to learn Node.js + Express + SQL together to build real APIs.  
-This project helped me a lot to be ready for junior backend roles.
+- Learned normalization (1NF, 2NF, 3NF) and why 3NF is usually enough
 
-Thanks for reading!  
-Feel free to ask me anything about databases.
+- Mastered SQL:
+  - SELECT, WHERE, JOINs (INNER, LEFT), GROUP BY, HAVING
+  - Aggregates: COUNT, SUM, AVG
+  - Date functions: DATEDIFF, DATE_FORMAT
+  - INSERT, UPDATE, DELETE with correct order to avoid foreign key errors
 
-Bruce  
-(December 2025)
+- Fixed many common errors:
+  - Unknown column (1054)
+  - Foreign key constraint fails (1451/1452)
+  - Safe update mode (1175)
+  - GROUP BY issues with ONLY_FULL_GROUP_BY
+  - Wrong insert order (parents before children)
+
+- Used MySQL Workbench for:
+  - Creating ER diagrams with crow's foot notation
+  - Forward engineering to create tables
+  - Reverse engineering existing databases
+
+### Key project outcome
+Built and populated a working university database.  
+Wrote real queries like:
+- Students born in September
+- Age calculation as of specific date
+- Students in a course
+- Instructors for a student
+- Total credits per student
+- Number of courses per college
+
+This project taught me how databases work in real applications and how to debug patiently.
+
+Still learning, but now I feel confident with relational databases and SQL.
+
+Thanks for looking at my work!
